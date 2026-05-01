@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Battle Test</title>
+<link rel="stylesheet" href="MainGameDesign.css">
+</head>
+
+<body>
+
+<div id="battleArea">
+
+<img id="player" src="">
+<img id="enemy" src="Characters/Enemy1.png">
+<div id="combatPopup"></div>
+
+<div id="playerHPContainer">
+<div class="hpBar">
+<div id="playerHPBar"></div>
+</div>
+</div>
+
+<div id="hud">
+<div id="scoreBoard">Score: <span id="scoreValue">0</span></div>
+<div id="defeatBoard">Defeated: <span id="defeatValue">0</span>/5</div>
+<div id="timerBoard">Time: <span id="timerValue">60</span>s</div>
+</div>
+
+<div id="enemyHPContainer">
+<div class="hpBar">
+<div id="enemyHPBar"></div>
+</div>
+</div>
+
+<div id="quizBox">
+<p id="questionText">Loading question...</p>
+<div id="choices"></div>
+<p id="feedback"></p>
+</div>
+
+</div>
+
+<script src="QuizModules.js"></script>
+<script src="FunctionMainGame.js"></script>
+
+</body>
+</html>

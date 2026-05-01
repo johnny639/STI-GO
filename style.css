@@ -1,0 +1,332 @@
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0;
+  animation: videoFadeIn 1s ease forwards;
+}
+
+.title-container {
+    position: absolute;
+    top: 1%;           
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.game-title {
+    width: 550px;
+    animation: float 3s ease-in-out infinite;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.game-title:hover {
+    transform: scale(1.08) translateY(-8px);
+    filter: drop-shadow(0 0 15px rgba(255, 215, 0, 0.8));
+}
+
+.game-title:active {
+    transform: scale(0.95);
+}
+
+@keyframes videoFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+  opacity: 0;
+  animation: bodyFadeIn 1s ease forwards;
+  background-color: #000;
+}
+
+@keyframes videoFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes bodyFadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.fadeOut {
+  animation: fadeOut 0.9s ease forwards;
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.title-box {
+  position: absolute;
+  top: 5vh;          
+  left: 5vw;         
+
+  font-family: 'Exo 2', Arial, Helvetica, sans-serif;
+  font-weight: 100;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+
+  font-size: clamp(20px, 3.5vw, 55px); 
+  color: #fff;
+
+ text-shadow:
+    2px 2px 6px rgba(0, 0, 0, 0.7),
+    0 0 8px rgba(255, 255, 255, 0.7),
+    0 0 14px rgba(255, 255, 255, 0.5);
+
+  
+ opacity: 0;
+  transform: translateY(-30px);
+  animation: intro 2s ease forwards;
+}
+
+
+@keyframes intro {
+  0% {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  50% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+.game-icon {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.game-icon img {
+    width: 100px;
+    height: 100px;
+}
+
+.menu-left {
+    position: absolute;
+    top: 350px;
+    left: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+}
+
+.menu-left button {
+    width: 100%;
+    padding: 12px;
+    font-size: clamp(24px, 4vw, 60px);
+    cursor: pointer;
+    border: 2px solid white;
+    background: rgba(0,0,0,0.4);
+    color: white;
+    border-radius: 10px;
+    transition: 0.2s;
+    font-family: 'Russo One', sans-serif;
+}
+
+.menu-left button:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+
+.dev-box {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: rgba(0,0,0,0.4);
+    padding: 15px 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: right;
+}
+.popup {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    backdrop-filter: blur(3px);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.popup.show {
+    display: flex;
+}
+
+.popup-content {
+    background: linear-gradient(145deg, #2c2c2c, #1a1a1a);
+    padding: 25px 30px;
+    width: 320px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    color: #fff;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.7);
+    transform: scale(0.8);
+    opacity: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.popup.show .popup-content {
+    transform: scale(1);
+    opacity: 1;
+}
+
+.popup-content h2 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 10px;
+    color: #ffcc00;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.popup-content label {
+    font-size: 16px;
+}
+
+.popup-content input[type="range"] {
+    width: 100%;
+    height: 6px;
+    border-radius: 5px;
+    background: #444;
+    outline: none;
+    transition: background 0.3s;
+}
+
+.popup-content input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffcc00;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transition: background 0.2s;
+}
+
+.popup-content input[type="range"]::-webkit-slider-thumb:hover {
+    background: #ffd633;
+}
+
+.popup-content input[type="range"]::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #ffcc00;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0,0,0,0.5);
+    transition: background 0.2s;
+}
+
+.popup-content button {
+    padding: 12px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: none;
+    background: #ffcc00;
+    color: #222;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.popup-content button:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+.credits-box {
+    text-align: center;
+}
+
+.credits-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 20px;
+    object-fit: cover;
+    border: 4px solid #ffcc00;
+    margin: 15px auto;
+    display: block;
+}
+
+.credits-controls {
+    display: flex;
+    justify-content: space-between;
+}
+.credits-controls button {
+    padding: 8px 15px;
+    font-size: 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    border: none;
+    background: #ffcc00;
+    color: #222;
+    font-weight: bold;
+    transition: transform 0.2s, background 0.2s;
+}
+.credits-controls button:hover {
+    background: #ffd633;
+    transform: scale(1.05);
+}
+
+.start-transition  {
+    animation: fadeOutSmooth 1s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes fadeOutSmooth {
+    from {
+        opacity: 1;
+        transform: scale(1);
+        filter: blur(0);
+    }
+    to {
+        opacity: 0;
+        transform: scale(1.08);
+        filter: blur(12px);
+    }
+}
+
+.exit-transition {
+    animation: pageExit 0.7s ease forwards;
+}
+
+@keyframes pageExit {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    to {
+        
+        opacity: 0;
+        transform: scale(0.98);
+    }
+}
+
+
+
+
+
+
+

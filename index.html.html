@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@100;200;300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+
+    <title>STI STUDENT GO</title>
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+
+<video autoplay loop muted playsinline disablepictureinpicture id="bgVideo">
+    <source src="videos/bg-forest.mp4" type="video/mp4">
+</video>
+
+    <div class="game-icon">
+        <img src="pics/IMG_5664.PNG" alt="Game Icon"> 
+    </div>
+    
+   <div class="title-container">
+    <img src="pics/STIGAMETITLE.PNG" class="game-title">
+</div>
+    
+    <div class="menu-left">
+        <button onclick="goStart()">Start</button>
+        <button onclick="goOptions()">Options</button>
+        <button onclick="goCredits()">Credits</button>
+    </div>
+    
+<audio id="clickSound" src="sounds/click.mp3" preload="auto"></audio>
+
+
+  <div id="optionsPopup" class="popup">
+    <div class="popup-content">
+        <h2>Options</h2>
+
+        <label for="volumeControl">Volume For Background Music</label>
+<input type="range" id="volumeControl" min="0" max="1" step="0.01" value="0.5">
+
+        <label>Volume For Click</label>
+        <input type="range" id="volumeSlider" min="0" max="1" step="0.01" value="0.7">
+
+        <button onclick="closeOptions()">Close</button>
+    </div>
+</div>
+
+
+<div id="creditsPopup" class="popup">
+  <div class="popup-content credits-box">
+    <h2>Meet The Team</h2>
+
+
+    <img id="memberPhoto" class="credits-photo" src="pics/James.jpg" alt="Member Photo">
+    <h3 id="memberName">James Saraga</h3>
+
+    <div class="credits-controls">
+      <button id="prevMember">⟵ Prev</button>
+      <button id="nextMember">Next ⟶</button>
+    </div>
+
+    <button onclick="closeCredits()">Close</button>
+  </div>
+</div>
+
+
+<div class="dev-box">
+        <p>Main Developers</p>
+        <p>James • Aaron •</p>
+    </div>
+
+<audio id="bgm" autoplay loop muted>
+  <source src="music/Menu.mp3" type="audio/mpeg">
+</audio>
+
+    <script src="function.js"></script>
+
+</body>
+</html>
